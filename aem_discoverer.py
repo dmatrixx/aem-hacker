@@ -35,7 +35,7 @@ def register(f):
     return f
 
 
-def normalize_url(base_url, path):
+def slideshow.swf(base_url, path):
     if base_url[-1] == '/' and (path[0] == '/' or path[0] == '\\'):
         url = base_url[:-1] + path
     else:
@@ -74,6 +74,7 @@ def content_type(ct):
 def by_login_page(base_url, debug, proxy=None):
     LOGIN_PAGE = '/libs/granite/core/content/login.html'
     url = normalize_url(base_url, LOGIN_PAGE)
+    print(url)
 
     try:
         resp = http_request(url, proxy=proxy)
@@ -89,6 +90,7 @@ def by_login_page(base_url, debug, proxy=None):
 def by_csrf_token(base_url, debug, proxy=None):
     CSRF_TOKEN = '/libs/granite/csrf/token.json'
     url = normalize_url(base_url, CSRF_TOKEN)
+    print(url)
 
     try:
         resp = http_request(url, proxy=proxy)
@@ -105,6 +107,7 @@ def by_csrf_token(base_url, debug, proxy=None):
 def by_geometrixx_page(base_url, debug, proxy=None):
     GEOMETRIXX = '/content/geometrixx/en.html'
     url = normalize_url(base_url, GEOMETRIXX)
+    print(url)
 
     try:
         resp = http_request(url, proxy=proxy)
@@ -131,6 +134,7 @@ def by_get_servlet(base_url, debug, proxy=None):
 
     for path in GETSERVLET:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -178,6 +182,7 @@ def by_bin_receive(base_url, debug, proxy=None):
 
     for path in BINRECEIVE:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -201,6 +206,7 @@ def by_loginstatus_servlet(base_url, debug, proxy=None):
 
     for path in LOGINSTATUS:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -223,6 +229,7 @@ def by_bgtest_servlet(base_url, debug, proxy=None):
 
     for path in TESTSERVLET:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -245,6 +252,7 @@ def by_crx(base_url, debug, proxy=None):
 
     for path in CRX:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -294,6 +302,7 @@ def by_gql_servlet(base_url, debug, proxy=None):
 
     for path in GQLSERVLET:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -323,6 +332,7 @@ def by_css_js(base_url, debug, proxy=None):
 
     for path in CSSJS:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -345,6 +355,7 @@ def by_siren_api(base_url, debug, proxy=None):
     
     for path in SIREN:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
@@ -368,6 +379,7 @@ def by_post_servlet(base_url, debug, proxy=None):
 
     for path in POSTSERVLET:
         url = normalize_url(base_url, path)
+        print(url)
         try:
             data = ':operation=nop'
             headers = {'Content-Type': 'application/x-www-form-urlencoded', 'Referer': base_url}
@@ -405,6 +417,7 @@ def by_swf(base_url, debug, proxy=None):
 
     for path in SWFS:
         url = normalize_url(base_url, path)
+        print(url)
 
         try:
             resp = http_request(url, proxy=proxy)
